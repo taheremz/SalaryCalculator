@@ -1,20 +1,18 @@
-﻿namespace SalaryCalculator.OvetimePolicies
+﻿namespace SalaryCalculator.OvertimePolicies
 {
-    public class Calculators
+    public static class Calculators
     {
-        public void CalcurlatorA()
+        public static decimal OverTimeCalculatorA()
         {
-            throw new NotImplementedException();
+            return 19;
         }
-
-        public void CalcurlatorB()
+        public static decimal OverTimeCalculatorB()
         {
-            throw new NotImplementedException();
+            return 120;
         }
-
-        public void CalcurlatorC()
+        public static decimal OverTimeCalculatorC()
         {
-            throw new NotImplementedException();
+            return 100;
         }
     }
 }

@@ -5,13 +5,13 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.UI", "SalaryCalculator.UI\SalaryCalculator.UI.csproj", "{D690B426-2ED6-4AA6-ACA1-E614A9A4184D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.OvetimePolicies", "SalaryCalculator.OvetimePolicies\SalaryCalculator.OvetimePolicies.csproj", "{463484C5-9084-43B1-BA93-5D6BE62D58B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.OvertimePolicies", "SalaryCalculator.OvetimePolicies\SalaryCalculator.OvertimePolicies.csproj", "{463484C5-9084-43B1-BA93-5D6BE62D58B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.Infrustructure", "SalaryCalculator.Infrustructure\SalaryCalculator.Infrustructure.csproj", "{EA002812-798B-4F7A-B77F-2BC688EAA595}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.Application", "SalaryCalculator.Application\SalaryCalculator.Application.csproj", "{3907E548-267B-4170-AEEE-1A71B44C8ED1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryCalculator.Contract", "SalaryCalculator.Contracts\SalaryCalculator.Contract.csproj", "{240DF032-619F-4FF4-A091-BB16111877AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalaryCalculator.Contract", "SalaryCalculator.Contracts\SalaryCalculator.Contract.csproj", "{240DF032-619F-4FF4-A091-BB16111877AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

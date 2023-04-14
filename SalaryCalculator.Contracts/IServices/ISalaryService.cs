@@ -1,13 +1,13 @@
-﻿using SalaryCalculator.UI.Dtos;
+﻿using SalaryCalculator.Contract.Dtos;
 
 namespace SalaryCalculator.Contract.IServices
 {
     public interface ISalaryService
     {
-        public void Add();
-        public void Delete();
-        public void Update(); 
+        public bool Add(MonthlySalaryDto dto, decimal OverTime);
+        public bool Delete(int id);
+        public bool Update(MonthlySalaryDto dto); 
         List<MonthlySalaryDto> Get();
-        MonthlySalaryDto GetById(int id);
+        List<MonthlySalaryDto> GetByDate(DateTime? fromDate, DateTime? toDate);
     }
 }

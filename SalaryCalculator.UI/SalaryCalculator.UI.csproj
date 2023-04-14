@@ -2,26 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.11">
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 	  </PackageReference>
-	  <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SalaryCalculator.Application\SalaryCalculator.Application.csproj" />
     <ProjectReference Include="..\SalaryCalculator.Contracts\SalaryCalculator.Contract.csproj" />
     <ProjectReference Include="..\SalaryCalculator.Infrustructure\SalaryCalculator.Infrustructure.csproj" />
+    <ProjectReference Include="..\SalaryCalculator.OvetimePolicies\SalaryCalculator.OvertimePolicies.csproj" />
   </ItemGroup>
 
 </Project>

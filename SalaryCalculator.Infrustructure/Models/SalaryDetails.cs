@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SalaryCalculator.Infrustructure.Models
+﻿namespace SalaryCalculator.Infrustructure.Models
 {
     public class SalaryDetails
     {
+        public int Id { get; set; }
         public int PersonId { get; set; }
-        public decimal BasicSalary { get; set; }
-        public decimal Allowance { get; set; }
+        public Person Person { get; set; }
+        public decimal MonthlySalary { get; set; }
+        public int Date { get; set; }
 
     }
 }

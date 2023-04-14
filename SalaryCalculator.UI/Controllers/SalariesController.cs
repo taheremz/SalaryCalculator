@@ -1,46 +1,65 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalaryCalculator.Contract.Dtos;
 using SalaryCalculator.Contract.IServices;
+using SalaryCalculator.OvertimePolicies;
+using SalaryCalculator.UI.Convertors;
+using SalaryCalculator.UI.Enums;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SalaryCalculator.UI.Controllers
 {
-    [Route("api/[dataType]/[controller]")]
+    [Route("api")]
     [ApiController]
     public class SalariesController : ControllerBase
     {
         private readonly ISalaryService salaryService;
+        private readonly ConvertFactory convertFactory;
+        private readonly IOverTimeCalculator overTimeCalculator;
+        private readonly ICalculatorInvoker calculatorInvoker;
 
-        public SalariesController(ISalaryService salaryService)
+        public SalariesController(ISalaryService salaryService,
+                                  ConvertFactory convertFactory,
+                                  IOverTimeCalculator overTimeCalculator,
+                                  ICalculatorInvoker calculatorInvoker)
         {
             this.salaryService = salaryService;
+            this.convertFactory = convertFactory;
+            this.overTimeCalculator = overTimeCalculator;
+            this.calculatorInvoker = calculatorInvoker;
         }
-        [HttpPost]
-        public IActionResult Add()
+
+        [HttpPost("{dataType}/[controller]")]
+        public IActionResult Add(InputDataType dataType, [FromForm] MonthlySalaryAddDto dto)
+        {
+            var convertedData = convertFactory.GetConvertorInstance(dataType).Convert(dto.Data);
+            
+            salaryService.Add(convertedData, calculatorInvoker.SelectMethod(dto.OverTimeCalculator));
+            return Created("", dto);
+        }
+
+
+        [HttpPut("{dataType}/[controller]")]
+        public IActionResult Update([FromForm] MonthlySalaryAddDto dto)
         {
             return Ok();
         }
 
-        [HttpPut]
-        public IActionResult Update()
+        [HttpDelete("[controller]")]
+        public IActionResult Delete(int id)
         {
-            return Ok();
+            return Ok(salaryService.Delete(id));
         }
 
-        [HttpDelete]
-        public IActionResult Delete()
-        {
-            return Ok();
-        }
-
-        [HttpGet]
+        [HttpGet("[controller]")]
         public IActionResult Get()
         {
             return Ok(salaryService.Get());
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetRange(int id)
+        [HttpGet("[controller]/GetRange")]
+        public IActionResult GetRange()
         {
-            return Ok(salaryService.GetById(id));
+            return Ok();
         }
     }
 }

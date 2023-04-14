@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SalaryCalculator.Contracts\SalaryCalculator.Contract.csproj" />
+    <ProjectReference Include="..\SalaryCalculator.Infrustructure\SalaryCalculator.Infrustructure.csproj" />
   </ItemGroup>
 
 </Project>
